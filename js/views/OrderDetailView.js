@@ -11,7 +11,7 @@ class OrderDetailView {
       <div class="page-header">
         <div class="page-title-group">
           <h1 class="page-title">
-            <span class="title-icon">📝</span>
+        
             <span class="title-text">明細管理</span>
           </h1>
           <p class="page-subtitle">管理訂單明細、設備租賃與歸還資訊</p>
@@ -58,7 +58,7 @@ class OrderDetailView {
         <tr>
           <td colspan="8">
             <div class="empty-state">
-              <div class="empty-icon">📝</div>
+           
               <div class="empty-text">尚無明細資料</div>
               <div class="empty-sub">點擊「新增明細」開始建立</div>
             </div>
@@ -86,8 +86,8 @@ class OrderDetailView {
           <td class="cell-amount">${Number(d.單車金額).toLocaleString()}</td>
           <td ${lateFeeClass}>${lateFee > 0 ? 'NT$ ' + lateFee.toLocaleString() : '-'}</td>
           <td class="actions">
-            <button class="btn btn-edit" data-order-id="${d.訂單編號}" data-detail-id="${d.明細編號}">✏️ 編輯</button>
-            <button class="btn btn-delete" data-order-id="${d.訂單編號}" data-detail-id="${d.明細編號}">🗑️ 刪除</button>
+            <button class="btn btn-edit" data-order-id="${d.訂單編號}" data-detail-id="${d.明細編號}">編輯</button>
+            <button class="btn btn-delete" data-order-id="${d.訂單編號}" data-detail-id="${d.明細編號}">刪除</button>
           </td>
         </tr>`;
     }).join('');
