@@ -18,7 +18,7 @@ class OrderView {
         </div>
         <div class="toolbar">
           <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
+
             <input type="text" class="search-input" id="search-input" placeholder="搜尋訂單編號、客戶...">
           </div>
           <button class="btn btn-primary" id="btn-add">
@@ -75,8 +75,8 @@ class OrderView {
           <td>${o.客人人數} 人</td>
           <td class="cell-amount">${Number(o.總金額).toLocaleString()}</td>
           <td class="actions">
-            <button class="btn btn-edit" data-id="${o.訂單編號}">✏️ 編輯</button>
-            <button class="btn btn-delete" data-id="${o.訂單編號}">🗑️ 刪除</button>
+            <button class="btn btn-edit" data-id="${o.訂單編號}">編輯</button>
+            <button class="btn btn-delete" data-id="${o.訂單編號}">刪除</button>
           </td>
         </tr>`;
     }).join('');
