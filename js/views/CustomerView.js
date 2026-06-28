@@ -10,14 +10,14 @@ class CustomerView {
       <div class="page-header">
         <div class="page-title-group">
           <h1 class="page-title">
-            <span class="title-icon">👤</span>
+
             <span class="title-text">客戶管理</span>
           </h1>
           <p class="page-subtitle">管理所有客戶資料、會員狀態與聯絡資訊</p>
         </div>
         <div class="toolbar">
           <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
+ 
             <input type="text" class="search-input" id="search-input" placeholder="搜尋客戶姓名、ID...">
           </div>
           <button class="btn btn-primary" id="btn-add">
@@ -54,7 +54,6 @@ class CustomerView {
         <tr>
           <td colspan="5">
             <div class="empty-state">
-              <div class="empty-icon">📭</div>
               <div class="empty-text">尚無客戶資料</div>
               <div class="empty-sub">點擊「新增客戶」開始建立</div>
             </div>
@@ -73,8 +72,8 @@ class CustomerView {
           <td>${c.聯絡方式}</td>
           <td><span class="badge ${badgeClass}">${c.會員狀態}</span></td>
           <td class="actions">
-            <button class="btn btn-edit" data-id="${c.客戶_ID}">✏️ 編輯</button>
-            <button class="btn btn-delete" data-id="${c.客戶_ID}">🗑️ 刪除</button>
+            <button class="btn btn-edit" data-id="${c.客戶_ID}">編輯</button>
+            <button class="btn btn-delete" data-id="${c.客戶_ID}">刪除</button>
           </td>
         </tr>`;
     }).join('');
