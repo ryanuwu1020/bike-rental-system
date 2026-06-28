@@ -11,23 +11,18 @@ class OrderDetailController {
     this.equipmentModel = equipmentModel;
   }
 
-  /** 建立設備編號 → 型號名稱 對照表 */
   getEquipmentMap() {
     const map = {};
-    this.equipmentModel.getAll().forEach(e => {
-      map[e.設備編號] = e.自行車型號;
-    });
+    this.equipmentModel.getAll().forEach(e => { map[e.設備編號] = e.自行車型號; });
     return map;
   }
 
-  /** 初始化頁面 */
   init(container) {
     this.view.renderPage(container);
     this.refreshData();
     this.bindEvents();
   }
 
-  /** 刷新資料顯示 */
   refreshData() {
     const data = this.model.getAll();
     const equipMap = this.getEquipmentMap();
@@ -35,19 +30,14 @@ class OrderDetailController {
     this.view.renderStats(this.model.getStats());
   }
 
-  /** 綁定事件 */
   bindEvents() {
-    // 新增按鈕
     document.getElementById('btn-add').addEventListener('click', () => {
       const orders = this.orderModel.getAll();
       const equipments = this.equipmentModel.getAll();
       App.showModal('新增明細', this.view.getFormHTML(null, orders, equipments, false), () => {
         const data = this.view.getFormData();
         const error = this.view.validateForm(data);
-        if (error) {
-          App.showToast(error, 'error');
-          return false;
-        }
+        if (error) { App.showToast(error, 'error'); return false; }
         this.model.add(data);
         this.refreshData();
         App.showToast('明細新增成功！', 'success');
@@ -55,13 +45,9 @@ class OrderDetailController {
       });
     });
 
-    // 搜尋（同時搜尋設備名稱）
     document.getElementById('search-input').addEventListener('input', (e) => {
       const keyword = e.target.value.trim();
-      if (!keyword) {
-        this.refreshData();
-        return;
-      }
+      if (!keyword) { this.refreshData(); return; }
       const kw = keyword.toLowerCase();
       const equipMap = this.getEquipmentMap();
       const data = this.model.getAll().filter(d => {
@@ -72,7 +58,6 @@ class OrderDetailController {
       this.view.renderTable(data, equipMap);
     });
 
-    // 編輯與刪除（事件委派）
     document.getElementById('data-table-body').addEventListener('click', (e) => {
       const btn = e.target.closest('button');
       if (!btn) return;
@@ -86,13 +71,9 @@ class OrderDetailController {
         const equipments = this.equipmentModel.getAll();
         App.showModal('編輯明細', this.view.getFormHTML(item, orders, equipments, true), () => {
           const data = this.view.getFormData();
-          // 編輯時訂單編號不可變，使用原始值
           data.訂單編號 = orderId;
           const error = this.view.validateForm(data);
-          if (error) {
-            App.showToast(error, 'error');
-            return false;
-          }
+          if (error) { App.showToast(error, 'error'); return false; }
           this.model.update(orderId, detailId, data);
           this.refreshData();
           App.showToast('明細資料已更新！', 'success');

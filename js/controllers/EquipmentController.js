@@ -8,31 +8,24 @@ class EquipmentController {
     this.view = view;
   }
 
-  /** 初始化頁面 */
   init(container) {
     this.view.renderPage(container);
     this.refreshData();
     this.bindEvents();
   }
 
-  /** 刷新資料顯示 */
   refreshData() {
     const data = this.model.getAll();
     this.view.renderTable(data);
     this.view.renderStats(this.model.getStats());
   }
 
-  /** 綁定事件 */
   bindEvents() {
-    // 新增按鈕
     document.getElementById('btn-add').addEventListener('click', () => {
       App.showModal('新增設備', this.view.getFormHTML(), () => {
         const data = this.view.getFormData();
         const error = this.view.validateForm(data);
-        if (error) {
-          App.showToast(error, 'error');
-          return false;
-        }
+        if (error) { App.showToast(error, 'error'); return false; }
         this.model.add(data);
         this.refreshData();
         App.showToast('設備新增成功！', 'success');
@@ -40,14 +33,12 @@ class EquipmentController {
       });
     });
 
-    // 搜尋
     document.getElementById('search-input').addEventListener('input', (e) => {
       const keyword = e.target.value.trim();
       const data = keyword ? this.model.search(keyword) : this.model.getAll();
       this.view.renderTable(data);
     });
 
-    // 編輯與刪除（事件委派）
     document.getElementById('data-table-body').addEventListener('click', (e) => {
       const btn = e.target.closest('button');
       if (!btn) return;
@@ -59,10 +50,7 @@ class EquipmentController {
         App.showModal('編輯設備', this.view.getFormHTML(item), () => {
           const data = this.view.getFormData();
           const error = this.view.validateForm(data);
-          if (error) {
-            App.showToast(error, 'error');
-            return false;
-          }
+          if (error) { App.showToast(error, 'error'); return false; }
           this.model.update(id, data);
           this.refreshData();
           App.showToast('設備資料已更新！', 'success');

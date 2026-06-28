@@ -34,7 +34,6 @@ class OrderModel {
   add(order) {
     const all = this.getAll();
     order.訂單編號 = this.generateId();
-    // 自動記錄建立時間
     if (!order.訂單建立時間) {
       const now = new Date();
       order.訂單建立時間 = now.getFullYear() + '-' +
