@@ -18,7 +18,6 @@ class OrderDetailView {
         </div>
         <div class="toolbar">
           <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
             <input type="text" class="search-input" id="search-input" placeholder="搜尋訂單編號、設備...">
           </div>
           <button class="btn btn-primary" id="btn-add">
