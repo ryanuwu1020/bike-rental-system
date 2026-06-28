@@ -13,39 +13,50 @@
   padding: 0;
 }
 
-/* Custom Properties — 暖色系配色 */
+/* Custom Properties — 溫潤暖色系配色 (Cozy Warm Palette) */
 :root {
-  --bg-primary: #0c0806;
-  --bg-secondary: #151010;
-  --bg-tertiary: #1e1614;
-  --bg-card: rgba(255, 180, 120, 0.03);
-  --bg-card-hover: rgba(255, 180, 120, 0.06);
-  --text-primary: #f4ebe4;
-  --text-secondary: #9e8a7a;
-  --text-muted: #6a5548;
-  --accent-orange: #FF7A3D;
-  --accent-rose: #E8365D;
-  --accent-gradient: linear-gradient(135deg, #FF7A3D 0%, #E8365D 100%);
-  --accent-gradient-hover: linear-gradient(135deg, #FF9255 0%, #F04E72 100%);
-  --border-color: rgba(255, 160, 100, 0.07);
-  --border-hover: rgba(255, 160, 100, 0.14);
-  --danger: #f43f5e;
-  --danger-bg: rgba(244, 63, 94, 0.12);
-  --success: #22c55e;
-  --success-bg: rgba(34, 197, 94, 0.12);
-  --warning: #f59e0b;
+  /* 背景色：改為明亮、低飽和的奶茶/奶油色，提升閱讀舒適度 */
+  --bg-primary: #FFF5F0;    /* 柔和的奶油粉橘 */
+  --bg-secondary: #FDE8DE;  /* 溫暖的淺蜜桃色 */
+  --bg-tertiary: #F8D6C6;   /* 帶有層次感的暖杏色 */
+  --bg-card: rgba(255, 122, 61, 0.04);
+  --bg-card-hover: rgba(255, 122, 61, 0.08);
+
+  /* 文字色：使用深咖啡色取代純黑，讓整體風格更溫潤不刺眼 */
+  --text-primary: #3B281D;   /* 深焙咖啡色 */
+  --text-secondary: #8B6B58; /* 焦糖棕色 */
+  --text-muted: #B89B88;     /* 淺茶棕色 */
+
+  /* 點綴色：保持活潑的夕陽橘紅，稍微提升明亮度 */
+  --accent-orange: #FF7135;
+  --accent-rose: #E64858;
+  --accent-gradient: linear-gradient(135deg, #FF7135 0%, #E64858 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #FF8955 0%, #F05C6B 100%);
+
+  /* 邊框與狀態色 */
+  --border-color: rgba(255, 113, 53, 0.1);
+  --border-hover: rgba(255, 113, 53, 0.2);
+  
+  /* 功能色：稍微調暖以融入整體風格 */
+  --danger: #EF4444;
+  --danger-bg: rgba(239, 68, 68, 0.12);
+  --success: #10B981;        /* 改用稍微偏暖的翠綠色 */
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --warning: #F59E0B;
   --warning-bg: rgba(245, 158, 11, 0.12);
-  --info: #f97316;
+  --info: #F97316;
   --info-bg: rgba(249, 115, 22, 0.12);
+
+  /* 尺寸與陰影：將陰影帶入一點「暖棕色調」，避免死黑色的陰影破壞暖色氛圍 */
   --sidebar-width: 270px;
   --radius-sm: 8px;
   --radius: 12px;
   --radius-lg: 16px;
   --radius-xl: 20px;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 4px 20px rgba(255, 122, 61, 0.2);
+  --shadow-sm: 0 2px 8px rgba(84, 46, 26, 0.06);
+  --shadow-md: 0 8px 24px rgba(84, 46, 26, 0.1);
+  --shadow-lg: 0 20px 50px rgba(84, 46, 26, 0.15);
+  --shadow-glow: 0 4px 20px rgba(255, 113, 53, 0.25);
   --transition-fast: all 0.15s ease;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,9 +87,10 @@ body::before {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(ellipse at 20% 50%, rgba(255, 122, 61, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(232, 54, 93, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+    /* 調整光暈的顏色與透明度，使其更像夕陽餘暉 */
+    radial-gradient(ellipse at 20% 50%, rgba(255, 113, 53, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(230, 72, 88, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
