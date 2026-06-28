@@ -10,14 +10,13 @@ class EquipmentView {
       <div class="page-header">
         <div class="page-title-group">
           <h1 class="page-title">
-            <span class="title-icon">🚲</span>
+       
             <span class="title-text">設備管理</span>
           </h1>
           <p class="page-subtitle">管理自行車庫存、型號與狀態資訊</p>
         </div>
         <div class="toolbar">
           <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
             <input type="text" class="search-input" id="search-input" placeholder="搜尋設備型號、編號...">
           </div>
           <button class="btn btn-primary" id="btn-add">
@@ -54,7 +53,7 @@ class EquipmentView {
         <tr>
           <td colspan="5">
             <div class="empty-state">
-              <div class="empty-icon">🚲</div>
+   
               <div class="empty-text">尚無設備資料</div>
               <div class="empty-sub">點擊「新增設備」開始建立</div>
             </div>
@@ -75,8 +74,8 @@ class EquipmentView {
           <td>${e.購入日期}</td>
           <td><span class="badge ${badgeClass}">${e.當前狀態}</span></td>
           <td class="actions">
-            <button class="btn btn-edit" data-id="${e.設備編號}">✏️ 編輯</button>
-            <button class="btn btn-delete" data-id="${e.設備編號}">🗑️ 刪除</button>
+            <button class="btn btn-edit" data-id="${e.設備編號}">編輯</button>
+            <button class="btn btn-delete" data-id="${e.設備編號}">刪除</button>
           </td>
         </tr>`;
     }).join('');
