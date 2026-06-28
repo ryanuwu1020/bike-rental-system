@@ -11,7 +11,7 @@ class OrderView {
       <div class="page-header">
         <div class="page-title-group">
           <h1 class="page-title">
-            <span class="title-icon">📋</span>
+  
             <span class="title-text">訂單管理</span>
           </h1>
           <p class="page-subtitle">管理租賃訂單、金額與客戶關聯</p>
@@ -56,7 +56,7 @@ class OrderView {
         <tr>
           <td colspan="6">
             <div class="empty-state">
-              <div class="empty-icon">📋</div>
+
               <div class="empty-text">尚無訂單資料</div>
               <div class="empty-sub">點擊「新增訂單」開始建立</div>
             </div>
